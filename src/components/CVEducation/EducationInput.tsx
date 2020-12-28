@@ -3,7 +3,7 @@ import React from "react";
 export const EducationInput = ({ education, handleEducation }: any) => {
   return (
     <>
-      <h2>Experience</h2>
+      <h2>Education</h2>
       <label>
         School Name: <br />
         <input
