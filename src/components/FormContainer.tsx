@@ -9,20 +9,19 @@ import { FormSkills } from "./CVSkills/FormSkills";
 import { EducationInput } from "./CVEducation/EducationInput";
 import { FormEducation } from "./CVEducation/FormEducation";
 
+const InputDiv = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 2rem;
+  font-family: sans-serif;
+`;
+
 const CVDiv = styled.div`
   position: relative;
   border: 1px solid black;
   font-family: sans-serif;
   margin: 2rem;
   padding: 1.5rem;
-`;
-
-const InputDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 45vh;
-  margin: 2rem;
 `;
 
 export const FormContainer: React.FC = () => {
