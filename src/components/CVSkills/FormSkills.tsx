@@ -4,7 +4,11 @@ export const FormSkills = ({ skills }: any) => {
   return (
     <>
       <h2>Skills</h2>
-      <p>hi</p>
+      <ul>
+        {skills.map((skill: string, i: number) => {
+          return <li key={i}>{skill}</li>;
+        })}
+      </ul>
     </>
   );
 };

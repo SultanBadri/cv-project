@@ -27,6 +27,17 @@ export const ExperienceInput = ({ experience, handleExperience }: any) => {
       </label>
       <br />
       <label>
+        State: <br />
+        <input
+          type="text"
+          name="state"
+          placeholder="State"
+          value={experience.state}
+          onChange={handleExperience}
+        />
+      </label>
+      <br />
+      <label>
         From: <br />
         <input
           type="text"

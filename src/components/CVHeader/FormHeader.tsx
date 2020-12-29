@@ -7,8 +7,8 @@ export const FormHeader = ({ info }: any) => {
   return (
     <>
       <h1>
-        {info.firstName !== "" ? info.firstName : "First name"}{" "}
-        {info.lastName !== "" ? info.lastName : "Last name"}
+        {info.firstName !== "" ? info.firstName : "John"}{" "}
+        {info.lastName !== "" ? info.lastName : "Doe"}
       </h1>
       <p>{info.occupation !== "" ? info.occupation : "Current occupation"}</p>
 

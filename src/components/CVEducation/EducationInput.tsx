@@ -27,6 +27,17 @@ export const EducationInput = ({ education, handleEducation }: any) => {
       </label>
       <br />
       <label>
+        State: <br />
+        <input
+          type="text"
+          name="state"
+          placeholder="State"
+          value={education.state}
+          onChange={handleEducation}
+        />
+      </label>
+      <br />
+      <label>
         From: <br />
         <input
           type="text"
@@ -53,8 +64,19 @@ export const EducationInput = ({ education, handleEducation }: any) => {
         <input
           type="text"
           name="degree"
-          placeholder="From"
+          placeholder="Degree"
           value={education.degree}
+          onChange={handleEducation}
+        />
+      </label>
+      <br />
+      <label>
+        Awards and achievements: <br />
+        <input
+          type="text"
+          name="achievements"
+          placeholder="Awards and achievements"
+          value={education.achievements}
           onChange={handleEducation}
         />
       </label>

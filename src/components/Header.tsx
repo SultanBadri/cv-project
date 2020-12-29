@@ -18,11 +18,9 @@ const HeaderParagraph = styled.p`
 
 export const Header = () => {
   return (
-    <>
-      <DivHeader>
-        <HeaderH1>My CV-Maker</HeaderH1>
-        <HeaderParagraph>Make your dream CV today!</HeaderParagraph>
-      </DivHeader>
-    </>
+    <DivHeader>
+      <HeaderH1>My CV-Maker</HeaderH1>
+      <HeaderParagraph>Make your dream CV today!</HeaderParagraph>
+    </DivHeader>
   );
 };
