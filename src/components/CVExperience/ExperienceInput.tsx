@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { CgWorkAlt } from "react-icons/cg";
 
 const DetailsDiv = styled.details`
   background: #f2f2f2;
@@ -14,7 +15,9 @@ export const ExperienceInput = ({ experience, handleExperience }: any) => {
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20 }}>Experience</summary>
+        <summary style={{ fontSize: 20 }}>
+          Experience <CgWorkAlt style={{ verticalAlign: "middle" }} />{" "}
+        </summary>
         <label>
           Company: <br />
           <input

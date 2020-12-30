@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { VscTools } from "react-icons/vsc";
 
 const DetailsDiv = styled.details`
   background: #f2f2f2;
+  margin: 1rem;
+  padding: 10px 20px;
   border-radius: 7px;
   letter-spacing: 1px;
   cursor: pointer;
@@ -13,9 +16,21 @@ const InputContainer = styled.div`
 `;
 
 const InputBox = styled.input`
+  width: 98%;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
   border: none;
   outline: none;
-  border-bottom: 2px solid #4ae3b5; ;
+  border-bottom: 2px solid black;
+  resize: none;
+  background: rgba(243, 55, 55, 0);
+  transition: 0.3s ease;
+  &:focus ~ span {
+    transform: translateY(-1.2rem);
+  }
+  &:focus {
+    border-bottom: 2px solid #4ae3b5;
+  }
 `;
 
 const Span = styled.span`
@@ -25,7 +40,8 @@ const Span = styled.span`
   margin: 1rem 0;
   pointer-events: none;
   transition: 0.3s;
-  color: #666;
+  color: #555;
+  transition: 0.3s ease;
 `;
 
 export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
@@ -48,7 +64,9 @@ export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20 }}>Skills</summary>
+        <summary style={{ fontSize: 20 }}>
+          Skills <VscTools style={{ verticalAlign: "middle" }} />{" "}
+        </summary>
         <form onSubmit={onSubmit}>
           <InputContainer>
             <InputBox type="text" value={skill} onChange={handleChange} />

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MdSchool } from "react-icons/md";
 
 const DetailsDiv = styled.details`
   background: #f2f2f2;
@@ -14,7 +15,9 @@ export const EducationInput = ({ education, handleEducation }: any) => {
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20 }}>Education</summary>
+        <summary style={{ fontSize: 20 }}>
+          Education <MdSchool style={{ verticalAlign: "middle" }} />{" "}
+        </summary>
         <label>
           School Name: <br />
           <input

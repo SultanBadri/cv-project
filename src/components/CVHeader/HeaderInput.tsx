@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { GrCircleInformation } from "react-icons/gr";
 
 const DetailsDiv = styled.details`
+  vertical-align: bottom;
   background: #f2f2f2;
   margin: 1rem;
   padding: 10px 20px;
@@ -14,7 +16,10 @@ export const HeaderInput = ({ info, handleGeneralInfo }: any) => {
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20 }}>General Information</summary>
+        <summary style={{ fontSize: 20 }}>
+          General Information{" "}
+          <GrCircleInformation style={{ verticalAlign: "middle" }} />
+        </summary>
         <label>
           First name: <br />
           <input
