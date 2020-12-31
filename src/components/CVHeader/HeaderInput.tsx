@@ -4,98 +4,145 @@ import { GrCircleInformation } from "react-icons/gr";
 
 const DetailsDiv = styled.details`
   vertical-align: bottom;
-  background: #f2f2f2;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   margin: 1rem;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 7px;
   letter-spacing: 1px;
-  cursor: pointer;
+`;
+
+const InputDiv = styled.div`
+  position: relative;
+  margin: 1.5rem 0;
+`;
+
+const Input = styled.input`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  outline: none;
+  padding: 1rem;
+  transition: 0.3s ease;
+  &:focus {
+    border: 2px solid #4ae3b5;
+  }
+  &:focus + label {
+    top: -0.3rem;
+    left: 0.5rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+  &:not(:placeholder-shown)&:not(:focus) + label {
+    top: -0.3rem;
+    left: 0.5rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+`;
+
+const Label = styled.label`
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  background: white;
+  color: #80868b;
+  padding: 0 0.25rem;
+  transition: 0.3s ease;
+  pointer-events: none;
+  font-size: 0.9rem;
 `;
 
 export const HeaderInput = ({ info, handleGeneralInfo }: any) => {
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20 }}>
+        <summary style={{ fontSize: 20, cursor: "pointer" }}>
           General Information{" "}
           <GrCircleInformation style={{ verticalAlign: "middle" }} />
         </summary>
-        <label>
-          First name: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="firstName"
-            placeholder="First name"
+            placeholder=" "
+            className="input"
             value={info.firstName}
             onChange={handleGeneralInfo}
           />
-        </label>
+          <Label>First name</Label>
+        </InputDiv>
         <br />
-        <label>
-          Last name: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="lastName"
-            placeholder="Last name"
+            placeholder=" "
             value={info.lastName}
             onChange={handleGeneralInfo}
           />
-        </label>
+          <Label>Last name</Label>
+        </InputDiv>
         <br />
-        <label>
-          Current occupation: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="occupation"
-            placeholder="Current occupation"
+            placeholder=" "
             value={info.occupation}
             onChange={handleGeneralInfo}
           />
-        </label>
+          <Label>Current occupation</Label>
+        </InputDiv>
         <br />
-        <label>
-          Phone: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="phone"
-            placeholder="Phone"
+            placeholder=" "
             value={info.phone}
             onChange={handleGeneralInfo}
           />
-        </label>
+          <Label>Phone</Label>
+        </InputDiv>
         <br />
-        <label>
-          Email: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="email"
-            placeholder="Email"
+            placeholder=" "
             value={info.email}
             onChange={handleGeneralInfo}
           />
-        </label>
+          <Label>Email</Label>
+        </InputDiv>
         <br />
-        <label>
-          LinkedIn: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="linkedin"
-            placeholder="LinkedIn"
+            placeholder=" "
             value={info.linkedin}
             onChange={handleGeneralInfo}
           />
-        </label>
+          <Label>LinkedIn</Label>
+        </InputDiv>
         <br />
-        <label>
-          GitHub: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="github"
-            placeholder="GitHub"
+            placeholder=" "
             value={info.github}
             onChange={handleGeneralInfo}
           />
-        </label>
+          <Label>GitHub</Label>
+        </InputDiv>
+        <br />
+        <br />
       </DetailsDiv>
     </>
   );

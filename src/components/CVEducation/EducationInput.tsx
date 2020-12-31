@@ -3,97 +3,144 @@ import styled from "styled-components";
 import { MdSchool } from "react-icons/md";
 
 const DetailsDiv = styled.details`
-  background: #f2f2f2;
+  vertical-align: bottom;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   margin: 1rem;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 7px;
   letter-spacing: 1px;
-  cursor: pointer;
+`;
+
+const InputDiv = styled.div`
+  position: relative;
+  margin: 1.5rem 0;
+`;
+
+const Input = styled.input`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  outline: none;
+  padding: 1rem;
+  transition: 0.3s ease;
+  &:focus {
+    border: 2px solid #4ae3b5;
+  }
+  &:focus + label {
+    top: -0.3rem;
+    left: 0.5rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+  &:not(:placeholder-shown)&:not(:focus) + label {
+    top: -0.3rem;
+    left: 0.5rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+`;
+
+const Label = styled.label`
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  background: white;
+  color: #80868b;
+  padding: 0 0.25rem;
+  transition: 0.3s ease;
+  pointer-events: none;
+  font-size: 0.9rem;
 `;
 
 export const EducationInput = ({ education, handleEducation }: any) => {
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20 }}>
+        <summary style={{ fontSize: 20, cursor: "pointer" }}>
           Education <MdSchool style={{ verticalAlign: "middle" }} />{" "}
         </summary>
-        <label>
-          School Name: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="schoolName"
-            placeholder="School Name"
+            placeholder=" "
             value={education.schoolName}
             onChange={handleEducation}
           />
-        </label>
+          <Label>School name</Label>
+        </InputDiv>
         <br />
-        <label>
-          City: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="city"
-            placeholder="City"
+            placeholder=" "
             value={education.city}
             onChange={handleEducation}
           />
-        </label>
+          <Label>City</Label>
+        </InputDiv>
         <br />
-        <label>
-          State: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="state"
-            placeholder="State"
+            placeholder=" "
             value={education.state}
             onChange={handleEducation}
           />
-        </label>
+          <Label>State</Label>
+        </InputDiv>
         <br />
-        <label>
-          From: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="from"
-            placeholder="From"
+            placeholder=" "
             value={education.from}
             onChange={handleEducation}
           />
-        </label>
+          <Label>From</Label>
+        </InputDiv>
         <br />
-        <label>
-          To: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="to"
-            placeholder="To"
+            placeholder=" "
             value={education.to}
             onChange={handleEducation}
           />
-        </label>
+          <Label>To</Label>
+        </InputDiv>
         <br />
-        <label>
-          Degree: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="degree"
-            placeholder="Degree"
+            placeholder=" "
             value={education.degree}
             onChange={handleEducation}
           />
-        </label>
+          <Label>From</Label>
+        </InputDiv>
         <br />
-        <label>
-          Awards and achievements: <br />
-          <input
+        <InputDiv>
+          <Input
             type="text"
             name="achievements"
-            placeholder="Awards and achievements"
+            placeholder=" "
             value={education.achievements}
             onChange={handleEducation}
           />
-        </label>
+          <Label>Awards and achievements</Label>
+        </InputDiv>
+        <br />
+        <br />
       </DetailsDiv>
     </>
   );

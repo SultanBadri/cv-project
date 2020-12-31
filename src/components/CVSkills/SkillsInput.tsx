@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { VscTools } from "react-icons/vsc";
 
 const DetailsDiv = styled.details`
-  background: #f2f2f2;
+  vertical-align: bottom;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   margin: 1rem;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 7px;
   letter-spacing: 1px;
-  cursor: pointer;
 `;
 
 const InputContainer = styled.div`
@@ -44,6 +44,17 @@ const Span = styled.span`
   transition: 0.3s ease;
 `;
 
+const AddSkillButton = styled.button`
+  font-size: 15px;
+  padding: 8px;
+  color: white;
+  background: #4ae3b5;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  width: 100%;
+`;
+
 export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
   const handleChange = (e: any) => {
     const { value } = e.target;
@@ -64,7 +75,7 @@ export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20 }}>
+        <summary style={{ fontSize: 20, cursor: "pointer" }}>
           Skills <VscTools style={{ verticalAlign: "middle" }} />{" "}
         </summary>
         <form onSubmit={onSubmit}>
@@ -72,7 +83,7 @@ export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
             <InputBox type="text" value={skill} onChange={handleChange} />
             <Span>Skill</Span>
           </InputContainer>
-          <button>+ Add skill</button>
+          <AddSkillButton>+ Add skill</AddSkillButton>
         </form>
       </DetailsDiv>
     </>
