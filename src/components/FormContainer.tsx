@@ -34,8 +34,8 @@ export const FormContainer: React.FC = () => {
     linkedin: "",
     github: "",
   });
-  const handleGeneralInfo = (e: any) => {
-    const { name, value } = e.target;
+  const handleGeneralInfo = (e: React.FormEvent<HTMLInputElement>): void => {
+    const { name, value } = e.currentTarget;
     setInfo((prev) => ({
       ...prev,
       [name]: value,
@@ -51,8 +51,8 @@ export const FormContainer: React.FC = () => {
     role: "",
     accomplishments: "",
   });
-  const handleExperience = (e: any) => {
-    const { name, value } = e.target;
+  const handleExperience = (e: React.FormEvent<HTMLInputElement>): void => {
+    const { name, value } = e.currentTarget;
     setExperience((prev) => ({
       ...prev,
       [name]: value,
@@ -71,8 +71,8 @@ export const FormContainer: React.FC = () => {
     degree: "",
     achievements: "",
   });
-  const handleEducation = (e: any) => {
-    const { name, value } = e.target;
+  const handleEducation = (e: React.FormEvent<HTMLInputElement>): void => {
+    const { name, value } = e.currentTarget;
     setEducation((prev) => ({
       ...prev,
       [name]: value,

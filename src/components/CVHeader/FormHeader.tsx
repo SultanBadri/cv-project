@@ -10,7 +10,7 @@ export const FormHeader = ({ info }: any) => {
         {info.firstName !== "" ? info.firstName : "John"}{" "}
         {info.lastName !== "" ? info.lastName : "Doe"}
       </h1>
-      <p>{info.occupation !== "" ? info.occupation : "Current occupation"}</p>
+      <p>{info.occupation !== "" ? info.occupation : "Occupation"}</p>
 
       <div
         style={{

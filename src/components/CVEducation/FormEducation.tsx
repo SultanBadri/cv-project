@@ -28,7 +28,7 @@ export const FormEducation = ({ education }: any) => {
       <p>
         {education.achievements !== ""
           ? education.achievements
-          : "Awards and achievements"}
+          : "Achievements"}
       </p>
     </>
   );

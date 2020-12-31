@@ -16,7 +16,7 @@ const InputContainer = styled.div`
 `;
 
 const InputBox = styled.input`
-  width: 98%;
+  width: 100%;
   padding: 0.5rem 0;
   margin: 1rem 0;
   border: none;
@@ -25,11 +25,14 @@ const InputBox = styled.input`
   resize: none;
   background: rgba(243, 55, 55, 0);
   transition: 0.3s ease;
-  &:focus ~ span {
+  &:focus + span {
     transform: translateY(-1.2rem);
   }
   &:focus {
     border-bottom: 2px solid #4ae3b5;
+  }
+  &:not(:placeholder-shown)&:not(:focus) + span {
+    transform: translateY(-1.2rem);
   }
 `;
 
@@ -56,19 +59,19 @@ const AddSkillButton = styled.button`
 `;
 
 export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
-  const handleChange = (e: any) => {
-    const { value } = e.target;
+  const handleChange = (e: React.FormEvent<HTMLInputElement>): void => {
+    const { value } = e.currentTarget;
     setSkill(value);
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (skill === "") return;
     addSkill(skill);
     setSkill("");
   };
 
-  const addSkill = (skill: any) => {
+  const addSkill = (skill: {}): void => {
     setSkills(skills.concat(skill));
   };
 
@@ -80,7 +83,12 @@ export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
         </summary>
         <form onSubmit={onSubmit}>
           <InputContainer>
-            <InputBox type="text" value={skill} onChange={handleChange} />
+            <InputBox
+              type="text"
+              placeholder=" "
+              value={skill}
+              onChange={handleChange}
+            />
             <Span>Skill</Span>
           </InputContainer>
           <AddSkillButton>+ Add skill</AddSkillButton>
