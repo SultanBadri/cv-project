@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import * as Styles from "./Styles";
 import { HeaderInput } from "./CVHeader/HeaderInput";
 import { FormHeader } from "./CVHeader/FormHeader";
 import { ExperienceInput } from "./CVExperience/ExperienceInput";
@@ -9,22 +9,8 @@ import { FormSkills } from "./CVSkills/FormSkills";
 import { EducationInput } from "./CVEducation/EducationInput";
 import { FormEducation } from "./CVEducation/FormEducation";
 
-const InputDiv = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 2rem;
-  font-family: sans-serif;
-`;
-
-const CVDiv = styled.div`
-  position: relative;
-  border: 1px solid black;
-  font-family: sans-serif;
-  margin: 2rem;
-  padding: 1.5rem;
-`;
-
 export const FormContainer: React.FC = () => {
+  // general information
   const [info, setInfo] = useState({
     firstName: "",
     lastName: "",
@@ -42,6 +28,7 @@ export const FormContainer: React.FC = () => {
     }));
   };
 
+  // experience
   const [experience, setExperience] = useState({
     company: "",
     city: "",
@@ -59,9 +46,11 @@ export const FormContainer: React.FC = () => {
     }));
   };
 
+  // skills
   const [skill, setSkill] = useState("");
   const [skills, setSkills] = useState([]);
 
+  // education
   const [education, setEducation] = useState({
     schoolName: "",
     city: "",
@@ -79,9 +68,12 @@ export const FormContainer: React.FC = () => {
     }));
   };
 
+  const [achievement, setAchievement] = useState("");
+  const [achievements, setAchievements] = useState([]);
+
   return (
     <>
-      <InputDiv>
+      <Styles.InputsDiv>
         <HeaderInput info={info} handleGeneralInfo={handleGeneralInfo} />
         <ExperienceInput
           experience={experience}
@@ -97,9 +89,9 @@ export const FormContainer: React.FC = () => {
           education={education}
           handleEducation={handleEducation}
         />
-      </InputDiv>
+      </Styles.InputsDiv>
 
-      <CVDiv>
+      <Styles.CVDiv>
         <FormHeader info={info} />
         <hr />
         <FormExperience experience={experience} />
@@ -107,7 +99,7 @@ export const FormContainer: React.FC = () => {
         <FormSkills skills={skills} />
         <hr />
         <FormEducation education={education} />
-      </CVDiv>
+      </Styles.CVDiv>
     </>
   );
 };

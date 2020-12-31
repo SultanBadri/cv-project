@@ -1,93 +1,93 @@
 import React from "react";
-import * as InputStyles from "../InputStyles";
+import * as Styles from "../Styles";
 import { CgWorkAlt } from "react-icons/cg";
 
 export const ExperienceInput = ({ experience, handleExperience }: any) => {
   return (
     <>
-      <InputStyles.DetailsDiv>
+      <Styles.DetailsDiv>
         <summary style={{ fontSize: 20, cursor: "pointer" }}>
           Experience <CgWorkAlt style={{ verticalAlign: "middle" }} />
         </summary>
-        <InputStyles.InputDiv>
-          <InputStyles.Input
+        <Styles.InputDiv>
+          <Styles.Input
             type="text"
             name="company"
             placeholder=" "
             value={experience.company}
             onChange={handleExperience}
           />
-          <InputStyles.Label>Company</InputStyles.Label>
-        </InputStyles.InputDiv>
+          <Styles.Label>Company</Styles.Label>
+        </Styles.InputDiv>
         <br />
-        <InputStyles.InputDiv>
-          <InputStyles.Input
+        <Styles.InputDiv>
+          <Styles.Input
             type="text"
             name="city"
             placeholder="City"
             value={experience.city}
             onChange={handleExperience}
           />
-          <InputStyles.Label>City</InputStyles.Label>
-        </InputStyles.InputDiv>
+          <Styles.Label>City</Styles.Label>
+        </Styles.InputDiv>
         <br />
-        <InputStyles.InputDiv>
-          <InputStyles.Input
+        <Styles.InputDiv>
+          <Styles.Input
             type="text"
             name="state"
             placeholder=" "
             value={experience.state}
             onChange={handleExperience}
           />
-          <InputStyles.Label>State</InputStyles.Label>
-        </InputStyles.InputDiv>
+          <Styles.Label>State</Styles.Label>
+        </Styles.InputDiv>
         <br />
-        <InputStyles.InputDiv>
-          <InputStyles.Input
+        <Styles.InputDiv>
+          <Styles.Input
             type="text"
             name="from"
             placeholder=" "
             value={experience.from}
             onChange={handleExperience}
           />
-          <InputStyles.Label>From</InputStyles.Label>
-        </InputStyles.InputDiv>
+          <Styles.Label>From</Styles.Label>
+        </Styles.InputDiv>
         <br />
-        <InputStyles.InputDiv>
-          <InputStyles.Input
+        <Styles.InputDiv>
+          <Styles.Input
             type="text"
             name="to"
             placeholder=" "
             value={experience.to}
             onChange={handleExperience}
           />
-          <InputStyles.Label>To</InputStyles.Label>
-        </InputStyles.InputDiv>
+          <Styles.Label>To</Styles.Label>
+        </Styles.InputDiv>
         <br />
-        <InputStyles.InputDiv>
-          <InputStyles.Input
+        <Styles.InputDiv>
+          <Styles.Input
             type="text"
             name="role"
             placeholder=" "
             value={experience.role}
             onChange={handleExperience}
           />
-          <InputStyles.Label>Role</InputStyles.Label>
-        </InputStyles.InputDiv>
+          <Styles.Label>Role</Styles.Label>
+        </Styles.InputDiv>
         <br />
-        <InputStyles.InputDiv>
-          <InputStyles.Input
+        <Styles.InputDiv>
+          <Styles.Input
             type="text"
             name="accomplishments"
             placeholder=" "
             value={experience.accomplishments}
             onChange={handleExperience}
           />
-          <InputStyles.Label>Accomplishments</InputStyles.Label>
-        </InputStyles.InputDiv>
+          <Styles.Label>Accomplishments</Styles.Label>
+        </Styles.InputDiv>
         <br />
         <br />
-      </InputStyles.DetailsDiv>
+      </Styles.DetailsDiv>
     </>
   );
 };

@@ -56,6 +56,7 @@ const AddSkillButton = styled.button`
   outline: none;
   border-radius: 25px;
   width: 100%;
+  cursor: pointer;
 `;
 
 export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {

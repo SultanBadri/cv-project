@@ -1,5 +1,41 @@
 import styled from "styled-components";
 
+// Header.tsx
+export const DivHeader = styled.div`
+  background: #11698e;
+  border-radius: 4px;
+  padding: 1rem 0.5rem;
+  margin: 0.5rem;
+  font-family: sans-serif;
+  text-align: center;
+`;
+
+export const HeaderH1 = styled.h1`
+  color: white;
+`;
+
+export const HeaderParagraph = styled.p`
+  color: #e7d9ea;
+`;
+
+// FormContainer.tsx
+export const InputsDiv = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 2rem;
+  font-family: sans-serif;
+`;
+
+export const CVDiv = styled.div`
+  position: relative;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+  border-radius: 4px;
+  font-family: sans-serif;
+  margin: 2rem;
+  padding: 1.5rem;
+`;
+
+// HeaderInput, ExperienceInput, EducationInput
 export const DetailsDiv = styled.details`
   vertical-align: bottom;
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
