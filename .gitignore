@@ -22,3 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .eslintcache
+src/setupTests.ts
+/src/react-app-env.d.ts
