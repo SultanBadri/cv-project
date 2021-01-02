@@ -86,6 +86,10 @@ export const FormContainer: React.FC = () => {
           setSkill={setSkill}
         />
         <EducationInput
+          achievement={achievement}
+          achievements={achievements}
+          setAchievement={setAchievement}
+          setAchievements={setAchievements}
           education={education}
           handleEducation={handleEducation}
         />

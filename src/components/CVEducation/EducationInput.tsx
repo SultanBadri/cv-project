@@ -2,7 +2,30 @@ import React from "react";
 import * as Styles from "../Styles";
 import { MdSchool } from "react-icons/md";
 
-export const EducationInput = ({ education, handleEducation }: any) => {
+export const EducationInput = ({
+  education,
+  handleEducation,
+  achievement,
+  achievements,
+  setAchievement,
+  setAchievements,
+}: any) => {
+  const handleAchievements = (e: React.FormEvent<HTMLInputElement>): void => {
+    const { value } = e.currentTarget;
+    setAchievement(value);
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    if (achievement === "") return;
+    addSkill(achievement);
+    setAchievement("");
+  };
+
+  const addSkill = (achievement: {}): void => {
+    setAchievements(achievements.concat(achievement));
+  };
+
   return (
     <>
       <Styles.DetailsDiv>
@@ -75,16 +98,18 @@ export const EducationInput = ({ education, handleEducation }: any) => {
           <Styles.Label>From</Styles.Label>
         </Styles.InputDiv>
         <br />
-        <Styles.InputDiv>
-          <Styles.Input
-            type="text"
-            name="achievements"
-            placeholder=" "
-            value={education.achievements}
-            onChange={handleEducation}
-          />
-          <Styles.Label>Achievements</Styles.Label>
-        </Styles.InputDiv>
+        <form onSubmit={onSubmit}>
+          <Styles.InputDiv>
+            <Styles.Input
+              type="text"
+              placeholder=" "
+              value={achievement}
+              onChange={handleAchievements}
+            />
+            <Styles.Label>Achievements</Styles.Label>
+          </Styles.InputDiv>
+          <button>+ Add achievement</button>
+        </form>
         <br />
         <br />
       </Styles.DetailsDiv>

@@ -7,7 +7,7 @@ const FlexDiv = styled.div`
   padding-right: 2rem;
 `;
 
-export const FormEducation = ({ education }: any) => {
+export const FormEducation = ({ education, achievements }: any) => {
   return (
     <>
       <h2>Education</h2>
@@ -30,6 +30,12 @@ export const FormEducation = ({ education }: any) => {
           ? education.achievements
           : "Achievements"}
       </p>
+      {/* <ul>
+        {" "}
+        {achievements.map((achievement: string, i: number) => {
+          return <li key={i}>{achievement}</li>;
+        })}
+      </ul> */}
     </>
   );
 };
