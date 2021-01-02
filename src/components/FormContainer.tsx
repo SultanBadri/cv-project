@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as Styles from "./Styles";
+import styled from "styled-components";
 import { HeaderInput } from "./CVHeader/HeaderInput";
 import { FormHeader } from "./CVHeader/FormHeader";
 import { ExperienceInput } from "./CVExperience/ExperienceInput";
@@ -8,6 +8,22 @@ import { SkillsInput } from "./CVSkills/SkillsInput";
 import { FormSkills } from "./CVSkills/FormSkills";
 import { EducationInput } from "./CVEducation/EducationInput";
 import { FormEducation } from "./CVEducation/FormEducation";
+
+const InputsDiv = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 2rem;
+  font-family: sans-serif;
+`;
+
+const CVDiv = styled.div`
+  position: relative;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+  border-radius: 4px;
+  font-family: sans-serif;
+  margin: 2rem;
+  padding: 1.5rem;
+`;
 
 export const FormContainer: React.FC = () => {
   // general information
@@ -46,6 +62,9 @@ export const FormContainer: React.FC = () => {
     }));
   };
 
+  const [accomplishment, setAccomplishment] = useState("");
+  const [accomplishments, setAccomplishments] = useState([]);
+
   // skills
   const [skill, setSkill] = useState("");
   const [skills, setSkills] = useState([]);
@@ -58,7 +77,6 @@ export const FormContainer: React.FC = () => {
     from: "",
     to: "",
     degree: "",
-    achievements: "",
   });
   const handleEducation = (e: React.FormEvent<HTMLInputElement>): void => {
     const { name, value } = e.currentTarget;
@@ -73,9 +91,13 @@ export const FormContainer: React.FC = () => {
 
   return (
     <>
-      <Styles.InputsDiv>
+      <InputsDiv>
         <HeaderInput info={info} handleGeneralInfo={handleGeneralInfo} />
         <ExperienceInput
+          accomplishment={accomplishment}
+          accomplishments={accomplishments}
+          setAccomplishment={setAccomplishment}
+          setAccomplishments={setAccomplishments}
           experience={experience}
           handleExperience={handleExperience}
         />
@@ -93,17 +115,20 @@ export const FormContainer: React.FC = () => {
           education={education}
           handleEducation={handleEducation}
         />
-      </Styles.InputsDiv>
+      </InputsDiv>
 
-      <Styles.CVDiv>
+      <CVDiv>
         <FormHeader info={info} />
         <hr />
-        <FormExperience experience={experience} />
+        <FormExperience
+          experience={experience}
+          accomplishments={accomplishments}
+        />
         <hr />
         <FormSkills skills={skills} />
         <hr />
-        <FormEducation education={education} />
-      </Styles.CVDiv>
+        <FormEducation education={education} achievements={achievements} />
+      </CVDiv>
     </>
   );
 };

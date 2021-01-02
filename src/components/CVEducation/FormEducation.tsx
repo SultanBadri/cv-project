@@ -7,7 +7,17 @@ const FlexDiv = styled.div`
   padding-right: 2rem;
 `;
 
+const Ul = styled.ul`
+  list-style: none;
+`;
+
 export const FormEducation = ({ education, achievements }: any) => {
+  const renderAchievements = () => {
+    if (achievements.length === 0) {
+      return <p>Achievements</p>;
+    }
+  };
+
   return (
     <>
       <h2>Education</h2>
@@ -25,17 +35,12 @@ export const FormEducation = ({ education, achievements }: any) => {
           {education.to !== "" ? education.to : "To"}
         </p>
       </FlexDiv>
-      <p>
-        {education.achievements !== ""
-          ? education.achievements
-          : "Achievements"}
-      </p>
-      {/* <ul>
-        {" "}
+      {renderAchievements()}
+      <ul>
         {achievements.map((achievement: string, i: number) => {
           return <li key={i}>{achievement}</li>;
         })}
-      </ul> */}
+      </ul>
     </>
   );
 };

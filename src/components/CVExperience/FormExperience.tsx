@@ -7,7 +7,13 @@ const FlexDiv = styled.div`
   padding-right: 2rem;
 `;
 
-export const FormExperience = ({ experience }: any) => {
+export const FormExperience = ({ experience, accomplishments }: any) => {
+  const renderAccomplishments = () => {
+    if (accomplishments.length === 0) {
+      return <p>Accomplishments</p>;
+    }
+  };
+
   return (
     <>
       <h2>Experience</h2>
@@ -25,11 +31,12 @@ export const FormExperience = ({ experience }: any) => {
           {experience.to !== "" ? experience.to : "To"}
         </p>
       </FlexDiv>
-      <p>
-        {experience.accomplishments !== ""
-          ? experience.accomplishments
-          : "Accomplishments"}
-      </p>
+      {renderAccomplishments()}
+      <ul>
+        {accomplishments.map((accomplishment: string, i: number) => {
+          return <li key={i}>{accomplishment}</li>;
+        })}
+      </ul>
     </>
   );
 };

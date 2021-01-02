@@ -1,6 +1,24 @@
 import React from "react";
+import styled from "styled-components";
 import * as Styles from "../Styles";
 import { MdSchool } from "react-icons/md";
+
+const Button = styled.button`
+  font-size: 15px;
+  margin: 2.7rem 0 0 0;
+  padding: 8px;
+  color: white;
+  background: #4ae3b5;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background: #30bf95;
+  }
+`;
 
 export const EducationInput = ({
   education,
@@ -108,10 +126,8 @@ export const EducationInput = ({
             />
             <Styles.Label>Achievements</Styles.Label>
           </Styles.InputDiv>
-          <button>+ Add achievement</button>
+          <Button>+ Add achievement</Button>
         </form>
-        <br />
-        <br />
       </Styles.DetailsDiv>
     </>
   );
