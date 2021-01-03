@@ -15,7 +15,8 @@ const HeaderH1 = styled.h1`
   color: white;
 `;
 const HeaderParagraph = styled.p`
-  color: #e7d9ea;
+  color: #bf8dc9;
+  font-weight: bolder;
 `;
 
 export const Header = () => {
@@ -24,7 +25,7 @@ export const Header = () => {
       <HeaderH1>
         My CV-Maker <BsNewspaper />
       </HeaderH1>
-      <HeaderParagraph>Make your dream CV today!</HeaderParagraph>
+      <HeaderParagraph>Build your dream CV today!</HeaderParagraph>
     </DivHeader>
   );
 };

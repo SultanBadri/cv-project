@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import * as Styles from "../Styles";
 import { MdSchool } from "react-icons/md";
+import { BiAddToQueue } from "react-icons/bi";
 
 const Button = styled.button`
   font-size: 15px;
   margin: 2.7rem 0 0 0;
   padding: 8px;
   color: white;
-  background: #4ae3b5;
+  background: #11698e;
   border: none;
   outline: none;
   border-radius: 25px;
@@ -16,7 +17,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: 0.3s ease;
   &:hover {
-    background: #30bf95;
+    background: #0b5675;
   }
 `;
 
@@ -47,7 +48,7 @@ export const EducationInput = ({
   return (
     <>
       <Styles.DetailsDiv>
-        <summary style={{ fontSize: 20, cursor: "pointer" }}>
+        <summary style={{ color: "#b167bf", fontSize: 20, cursor: "pointer" }}>
           Education <MdSchool style={{ verticalAlign: "middle" }} />{" "}
         </summary>
         <Styles.InputDiv>
@@ -126,7 +127,10 @@ export const EducationInput = ({
             />
             <Styles.Label>Achievements</Styles.Label>
           </Styles.InputDiv>
-          <Button>+ Add achievement</Button>
+          <Button>
+            {" "}
+            <BiAddToQueue /> Add achievement
+          </Button>
         </form>
       </Styles.DetailsDiv>
     </>

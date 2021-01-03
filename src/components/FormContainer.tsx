@@ -12,8 +12,12 @@ import { FormEducation } from "./CVEducation/FormEducation";
 const InputsDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 2rem;
+  margin: 2rem 1rem;
   font-family: sans-serif;
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const CVDiv = styled.div`

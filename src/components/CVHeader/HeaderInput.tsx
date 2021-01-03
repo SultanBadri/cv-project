@@ -1,14 +1,13 @@
 import React from "react";
 import * as Styles from "../Styles";
-import { GrCircleInformation } from "react-icons/gr";
+import { RiInformationLine } from "react-icons/ri";
 
 export const HeaderInput = ({ info, handleGeneralInfo }: any) => {
   return (
     <>
       <Styles.DetailsDiv>
-        <summary style={{ fontSize: 20, cursor: "pointer" }}>
-          General Information{" "}
-          <GrCircleInformation style={{ verticalAlign: "middle" }} />
+        <summary style={{ color: "#b167bf", fontSize: 20, cursor: "pointer" }}>
+          General <RiInformationLine style={{ verticalAlign: "middle" }} />
         </summary>
         <Styles.InputDiv>
           <Styles.Input

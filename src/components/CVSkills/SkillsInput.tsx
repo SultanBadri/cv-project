@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { VscTools } from "react-icons/vsc";
+import { BiAddToQueue } from "react-icons/bi";
+import { BsTrash } from "react-icons/bs";
 
 const DetailsDiv = styled.details`
   vertical-align: bottom;
@@ -29,7 +31,7 @@ const InputBox = styled.input`
     transform: translateY(-1.2rem);
   }
   &:focus {
-    border-bottom: 2px solid #4ae3b5;
+    border-bottom: 2px solid #11698e;
   }
   &:not(:placeholder-shown)&:not(:focus) + span {
     transform: translateY(-1.2rem);
@@ -51,7 +53,7 @@ const AddSkillButton = styled.button`
   font-size: 15px;
   padding: 8px;
   color: white;
-  background: #4ae3b5;
+  background: #11698e;
   border: none;
   outline: none;
   border-radius: 25px;
@@ -59,7 +61,24 @@ const AddSkillButton = styled.button`
   cursor: pointer;
   transition: 0.3s ease;
   &:hover {
-    background: #30bf95;
+    background: #0b5675;
+  }
+`;
+
+const DeleteButton = styled.button`
+  margin: 0.5rem 0;
+  font-size: 15px;
+  padding: 8px;
+  color: white;
+  background: #bd382f;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background: #a12032;
   }
 `;
 
@@ -80,10 +99,14 @@ export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
     setSkills(skills.concat(skill));
   };
 
+  const handleDeleteAll = () => {
+    setSkills((skills = []));
+  };
+
   return (
     <>
       <DetailsDiv>
-        <summary style={{ fontSize: 20, cursor: "pointer" }}>
+        <summary style={{ color: "#b167bf", fontSize: 20, cursor: "pointer" }}>
           Skills <VscTools style={{ verticalAlign: "middle" }} />{" "}
         </summary>
         <form onSubmit={onSubmit}>
@@ -96,7 +119,14 @@ export const SkillsInput = ({ skill, skills, setSkill, setSkills }: any) => {
             />
             <Span>Skill</Span>
           </InputContainer>
-          <AddSkillButton>+ Add skill</AddSkillButton>
+          <AddSkillButton style={{ verticalAlign: "middle" }}>
+            {" "}
+            <BiAddToQueue /> Add skill
+          </AddSkillButton>
+          <DeleteButton onClick={handleDeleteAll}>
+            {" "}
+            <BsTrash /> Delete All
+          </DeleteButton>{" "}
         </form>
       </DetailsDiv>
     </>

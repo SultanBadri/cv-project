@@ -27,7 +27,7 @@ export const Input = styled.input`
   padding: 1rem;
   transition: 0.3s ease;
   &:focus {
-    border: 2px solid #4ae3b5;
+    border: 2px solid #11698e;
   }
   &:focus + label {
     top: -0.3rem;

@@ -2,13 +2,14 @@ import React from "react";
 import * as Styles from "../Styles";
 import styled from "styled-components";
 import { CgWorkAlt } from "react-icons/cg";
+import { BiAddToQueue } from "react-icons/bi";
 
 const Button = styled.button`
   font-size: 15px;
   margin: 2.7rem 0 0 0;
   padding: 8px;
   color: white;
-  background: #4ae3b5;
+  background: #11698e;
   border: none;
   outline: none;
   border-radius: 25px;
@@ -16,7 +17,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: 0.3s ease;
   &:hover {
-    background: #30bf95;
+    background: #0b5675;
   }
 `;
 
@@ -48,7 +49,7 @@ export const ExperienceInput = ({
   return (
     <>
       <Styles.DetailsDiv>
-        <summary style={{ fontSize: 20, cursor: "pointer" }}>
+        <summary style={{ color: "#b167bf", fontSize: 20, cursor: "pointer" }}>
           Experience <CgWorkAlt style={{ verticalAlign: "middle" }} />
         </summary>
         <Styles.InputDiv>
@@ -127,7 +128,9 @@ export const ExperienceInput = ({
             />
             <Styles.Label>Accomplishment</Styles.Label>
           </Styles.InputDiv>
-          <Button>+ Add accomplishment</Button>
+          <Button>
+            <BiAddToQueue /> Add accomplishment
+          </Button>
         </form>
       </Styles.DetailsDiv>
     </>
