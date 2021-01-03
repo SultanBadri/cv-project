@@ -6,14 +6,14 @@ import { BiAddToQueue } from "react-icons/bi";
 
 const Button = styled.button`
   font-size: 15px;
-  margin: 2.7rem 0 0 0;
+  margin: 2.7rem auto 0 auto;
   padding: 8px;
   color: white;
   background: #11698e;
   border: none;
   outline: none;
-  border-radius: 25px;
   width: 100%;
+  border-radius: 25px;
   cursor: pointer;
   transition: 0.3s ease;
   &:hover {

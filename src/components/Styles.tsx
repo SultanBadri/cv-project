@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 // HeaderInput, ExperienceInput, EducationInput
 export const DetailsDiv = styled.details`
+  box-sizing: border-box;
   vertical-align: bottom;
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   margin: 1rem;
@@ -12,7 +13,7 @@ export const DetailsDiv = styled.details`
 
 export const InputDiv = styled.div`
   position: relative;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
 `;
 
 export const Input = styled.input`
@@ -40,6 +41,9 @@ export const Input = styled.input`
     left: 0.5rem;
     font-weight: 500;
     font-size: 0.7rem;
+  }
+  @media (min-width: 1400px) {
+    width: 88%;
   }
 `;
 
