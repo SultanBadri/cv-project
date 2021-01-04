@@ -65,6 +65,17 @@ export const EducationInput = ({
         <Styles.InputDiv>
           <Styles.Input
             type="text"
+            name="degree"
+            placeholder=" "
+            value={education.degree}
+            onChange={handleEducation}
+          />
+          <Styles.Label>Degree</Styles.Label>
+        </Styles.InputDiv>
+        <br />
+        <Styles.InputDiv>
+          <Styles.Input
+            type="text"
             name="city"
             placeholder=" "
             value={education.city}
@@ -104,17 +115,6 @@ export const EducationInput = ({
             onChange={handleEducation}
           />
           <Styles.Label>To</Styles.Label>
-        </Styles.InputDiv>
-        <br />
-        <Styles.InputDiv>
-          <Styles.Input
-            type="text"
-            name="degree"
-            placeholder=" "
-            value={education.degree}
-            onChange={handleEducation}
-          />
-          <Styles.Label>From</Styles.Label>
         </Styles.InputDiv>
         <br />
         <form onSubmit={onSubmit}>
