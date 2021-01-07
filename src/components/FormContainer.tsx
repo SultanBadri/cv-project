@@ -8,6 +8,7 @@ import { SkillsInput } from "./CVSkills/SkillsInput";
 import { FormSkills } from "./CVSkills/FormSkills";
 import { EducationInput } from "./CVEducation/EducationInput";
 import { FormEducation } from "./CVEducation/FormEducation";
+import { AiOutlinePrinter } from "react-icons/ai";
 
 const InputsDiv = styled.div`
   display: grid;
@@ -18,6 +19,9 @@ const InputsDiv = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media print {
+    display: none;
+  }
 `;
 
 const CVDiv = styled.div`
@@ -27,6 +31,36 @@ const CVDiv = styled.div`
   font-family: sans-serif;
   margin: 2rem;
   padding: 1.5rem;
+  @media print {
+    box-shadow: none;
+    margin: -2rem;
+  }
+`;
+
+const PrintButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PrintButton = styled.button`
+  padding: 8px 26px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 2px solid #11698e;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: #11698e;
+  font-weight: bold;
+  transition: 0.3s ease;
+  &:hover {
+    background: #11698e;
+    color: white;
+  }
+  @media print {
+    display: none;
+  }
 `;
 
 export const FormContainer: React.FC = () => {
@@ -133,6 +167,11 @@ export const FormContainer: React.FC = () => {
         <hr />
         <FormEducation education={education} achievements={achievements} />
       </CVDiv>
+      <PrintButtonContainer>
+        <PrintButton onClick={() => window.print()}>
+          <AiOutlinePrinter style={{ verticalAlign: "middle" }} /> Print CV
+        </PrintButton>
+      </PrintButtonContainer>
     </>
   );
 };

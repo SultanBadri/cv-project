@@ -9,6 +9,9 @@ const DivHeader = styled.div`
   margin: 0.5rem;
   font-family: sans-serif;
   text-align: center;
+  @media print {
+    display: none;
+  }
 `;
 
 const HeaderH1 = styled.h1`
