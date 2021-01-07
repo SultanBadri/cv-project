@@ -6,7 +6,7 @@ const DivHeader = styled.div`
   background: #11698e;
   border-radius: 4px;
   padding: 1rem 0.5rem;
-  margin: 0.5rem;
+  margin: 2rem;
   font-family: sans-serif;
   text-align: center;
   @media print {
