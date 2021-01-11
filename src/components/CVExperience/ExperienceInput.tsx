@@ -66,6 +66,17 @@ export const ExperienceInput = ({
         <Styles.InputDiv>
           <Styles.Input
             type="text"
+            name="role"
+            placeholder=" "
+            value={experience.role}
+            onChange={handleExperience}
+          />
+          <Styles.Label>Role</Styles.Label>
+        </Styles.InputDiv>
+        <br />
+        <Styles.InputDiv>
+          <Styles.Input
+            type="text"
             name="city"
             placeholder="City"
             value={experience.city}
@@ -105,17 +116,6 @@ export const ExperienceInput = ({
             onChange={handleExperience}
           />
           <Styles.Label>To</Styles.Label>
-        </Styles.InputDiv>
-        <br />
-        <Styles.InputDiv>
-          <Styles.Input
-            type="text"
-            name="role"
-            placeholder=" "
-            value={experience.role}
-            onChange={handleExperience}
-          />
-          <Styles.Label>Role</Styles.Label>
         </Styles.InputDiv>
         <br />
         <form onSubmit={onSubmit}>

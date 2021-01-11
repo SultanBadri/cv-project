@@ -12,6 +12,10 @@ const Li = styled.li`
   border-radius: 4px;
   background: #11698e;
   color: white;
+  @media print {
+    border: 2px solid #11698e;
+    color: #11698e;
+  }
 `;
 
 export const FormSkills = ({ skills }: any) => {
