@@ -1,5 +1,7 @@
 # CV Builder
 
+![cv_project](https://user-images.githubusercontent.com/46205282/104251550-d68c3200-5424-11eb-972a-19d7dfbbc064.gif)
+
 ### [Live Demo](https://sultanbadri.github.io/cv-project/)
 
 #### 📝 Description
