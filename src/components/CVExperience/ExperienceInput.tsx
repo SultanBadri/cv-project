@@ -78,7 +78,7 @@ export const ExperienceInput = ({
           <Styles.Input
             type="text"
             name="city"
-            placeholder="City"
+            placeholder=" "
             value={experience.city}
             onChange={handleExperience}
           />
